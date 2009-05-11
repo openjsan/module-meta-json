@@ -9,7 +9,7 @@ use base qw[Module::META];
 
 sub read {
     my ($class, $file) = @_;
-    my $load = jsonToObj(io($file)->all);
+    my $load = from_json(io($file)->all);
     return $class->new(%{$load});
 }
 
